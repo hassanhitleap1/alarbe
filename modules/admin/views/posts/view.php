@@ -31,6 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'description',
+            'sub_category_id',
+            'for_what',
             'create_at',
             'update_at',
         ],

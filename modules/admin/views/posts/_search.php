@@ -24,9 +24,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description') ?>
 
-    <?= $form->field($model, 'create_at') ?>
+    <?= $form->field($model, 'sub_category_id') ?>
 
-    <?= $form->field($model, 'update_at') ?>
+    <?= $form->field($model, 'for_what') ?>
+
+    <?php // echo $form->field($model, 'create_at') ?>
+
+    <?php // echo $form->field($model, 'update_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

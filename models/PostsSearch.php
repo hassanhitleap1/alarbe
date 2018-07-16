@@ -18,7 +18,7 @@ class PostsSearch extends Posts
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'sub_category_id', 'for_what'], 'integer'],
             [['title', 'description', 'create_at', 'update_at'], 'safe'],
         ];
     }
@@ -60,6 +60,8 @@ class PostsSearch extends Posts
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'sub_category_id' => $this->sub_category_id,
+            'for_what' => $this->for_what,
             'create_at' => $this->create_at,
             'update_at' => $this->update_at,
         ]);
