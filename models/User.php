@@ -165,4 +165,10 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function verifyPassword($password){
+
+        return $this->validatePassword($password);
+        
+    }
 }
