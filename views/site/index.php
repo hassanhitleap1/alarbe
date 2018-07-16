@@ -37,52 +37,99 @@ $this->title = 'alarbia';
     <span class="sr-only">Next</span>
   </a>
 </div>
+<!-- end fiexd silder -->
 
 
- <div class="row">
-		<div class="col-md-12">
-                <div id="Carousel" class="carousel slide">
-                 
-                <ol class="carousel-indicators">
-                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#Carousel" data-slide-to="1"></li>
-                    <li data-target="#Carousel" data-slide-to="2"></li>
-                </ol>
-                 
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    
-                <div class="item active">
-                	<div class="row">
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                <div class="item">
-                	<div class="row">
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                <div class="item">
-                	<div class="row">
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                </div><!--.carousel-inner-->
-                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                </div><!--.Carousel-->
-                 
-		</div>
-	</div>
+
+<div class="row ">
+        <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+                <div class="post-slide">
+                    <img src="images/img-1.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">5</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+ 
+                <div class="post-slide">
+                    <img src="images/img-2.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">8</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+                <div class="post-slide">
+                    <img src="images/img-2.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">8</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+                <div class="post-slide">
+                    <img src="images/img-3.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">8</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+                <div class="post-slide">
+                    <img src="images/img-4.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">8</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+                <div class="post-slide">
+                    <img src="images/img-5.jpg" alt="">
+                    <div class="post-date">
+                        <span class="month">Nov</span>
+                        <span class="date">8</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                    </h3>
+                    <p class="post-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
+                    </p>
+                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
