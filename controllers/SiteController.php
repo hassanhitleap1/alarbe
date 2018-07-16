@@ -11,6 +11,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Contact;
 use app\models\Pages;
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
@@ -133,5 +134,25 @@ class SiteController extends Controller
         $page=Pages::find()->where(['name'=>'about'])->one();
      
         return $this->render('about',['page'=>$page]);
+    }
+
+        /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 }
