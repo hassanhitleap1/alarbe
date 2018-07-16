@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Contact;
+use app\models\Pages;
 
 class SiteController extends Controller
 {
@@ -129,6 +130,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $page=Pages::find()->where(['name'=>'about'])->one();
+     
+        return $this->render('about',['page'=>$page]);
     }
 }
