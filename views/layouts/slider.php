@@ -1,3 +1,7 @@
+<?php
+
+use yii\helpers\Html;
+?>
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -9,15 +13,18 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="https://www.weetas.com/article/wp-content/uploads/2017/08/6-Home-buying-Tips-1.jpg" alt="Los Angeles">
+      <?= Html::img('images\slider\1.jpg',['alt'=>'sds']);?>
+     
     </div>
 
     <div class="item">
-      <img src="https://www.weetas.com/article/wp-content/uploads/2017/08/6-Home-buying-Tips-1.jpg" alt="Chicago">
+    <?= Html::img('images\slider\2.jpg',['alt'=>'sds']);?>
+     
     </div>
 
     <div class="item">
-      <img src="https://www.weetas.com/article/wp-content/uploads/2017/08/6-Home-buying-Tips-1.jpg" alt="New York">
+    <?= Html::img('images\slider\3.jpg',['alt'=>'sds']);?>
+      
     </div>
   </div>
 
