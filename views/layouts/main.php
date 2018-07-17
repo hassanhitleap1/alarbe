@@ -37,23 +37,23 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        // ['label' => 'About', 'url' => ['/site/about']],
+        // ['label' => 'Contact', 'url' => ['/site/contact']],
         ['label' => 'Admin', 'url' => ['/admin']],
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
+    // if (Yii::$app->user->isGuest) {
+    //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+    //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    // } else {
+    //     $menuItems[] = '<li>'
+    //         . Html::beginForm(['/site/logout'], 'post')
+    //         . Html::submitButton(
+    //             'Logout (' . Yii::$app->user->identity->username . ')',
+    //             ['class' => 'btn btn-link logout']
+    //         )
+    //         . Html::endForm()
+    //         . '</li>';
+    // }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
@@ -72,9 +72,22 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; alrbia <?= date('Y') ?></p>
-
-        <p class="pull-right">alrbia</p>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="">&copy; alrbia <?= date('Y') ?></p>
+            </div>
+            <div class="col-md-4">
+                <h3>connect us </h3>
+                <hr>
+                <ul>
+                    <li><?= Html::a('About', ['site/about']) ?></li>
+                     <li><?= Html::a('Contact', ['site/contact']) ?></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <p class="">alrbia</p>
+            </div>
+        </div>
     </div>
 </footer>
 
