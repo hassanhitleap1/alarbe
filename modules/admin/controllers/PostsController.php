@@ -8,6 +8,7 @@ use app\models\PostsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PostsController implements the CRUD actions for Posts model.
@@ -66,7 +67,15 @@ class PostsController extends Controller
     {
         $model = new Posts();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+            $model->files = UploadedFile::getInstances($model, 'files');
+            if ($paths=$model->upload()) {
+                // file is uploaded successfully
+                //$model->save();
+            }
+            
+            var_dump ($paths);
+            exit;
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

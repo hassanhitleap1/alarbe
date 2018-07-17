@@ -19,6 +19,7 @@ use Yii;
  */
 class Posts extends \yii\db\ActiveRecord
 {
+    public $files;
     /**
      * @inheritdoc
      */
@@ -37,6 +38,7 @@ class Posts extends \yii\db\ActiveRecord
             [['create_at', 'update_at'], 'safe'],
             [['title', 'description'], 'string', 'max' => 255],
             [['sub_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => SubCategories::className(), 'targetAttribute' => ['sub_category_id' => 'id']],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 10],
         ];
     }
 
@@ -71,5 +73,23 @@ class Posts extends \yii\db\ActiveRecord
     public static function find()
     {
         return new PostsQuery(get_called_class());
+    }
+
+
+    /*
+    * upload images for post
+    */
+    public function upload()
+    {
+        if ($this->validate()) { 
+            foreach ($this->files as $file) {
+                $path='images/images-post/' . md5(uniqid(rand(), true)) . '.' . $file->extension;
+                $file->saveAs($path);
+               $paths[]= $path;
+            }
+            return $paths;
+        } else {
+            return false;
+        }
     }
 }

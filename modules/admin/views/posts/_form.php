@@ -12,7 +12,7 @@ use app\models\SubCategories;
 
 <div class="posts-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+   <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
@@ -27,6 +27,8 @@ use app\models\SubCategories;
         ['1'=>'rent','2'=>'sell'],
         ['prompt'=> 'please select for what']
     ) ?>
+
+    <?= $form->field($model, 'files[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
 
 
     <div class="form-group">
