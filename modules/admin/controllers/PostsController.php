@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\models\ImagesPost;
 
 /**
  * PostsController implements the CRUD actions for Posts model.
@@ -68,15 +69,22 @@ class PostsController extends Controller
         $model = new Posts();
 
         if ($model->load(Yii::$app->request->post()) ) {
-            $model->files = UploadedFile::getInstances($model, 'files');
-            if ($paths=$model->upload()) {
+            if($model->save()){
+                $model->files = UploadedFile::getInstances($model, 'files');
+                if ($paths = $model->upload()) {
                 // file is uploaded successfully
-                //$model->save();
+                    $prime=1;
+                    foreach ($paths as $path) {
+                        $modeImge = new ImagesPost();
+                        $modeImge->image_path = $path;
+                        $modeImge->prime =$prime;
+                        $modeImge->post_id = $model->id;
+                        $modeImge->save();
+                        $prime=0;
+                    }
+                }
+                return $this->redirect(['view', 'id' => $model->id]);
             }
-            
-            var_dump ($paths);
-            exit;
-            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [

@@ -38,7 +38,7 @@ class Posts extends \yii\db\ActiveRecord
             [['create_at', 'update_at'], 'safe'],
             [['title', 'description'], 'string', 'max' => 255],
             [['sub_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => SubCategories::className(), 'targetAttribute' => ['sub_category_id' => 'id']],
-            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 10],
+            [['files'], 'file',  'extensions' => 'png, jpg', 'maxFiles' => 10],
         ];
     }
 
