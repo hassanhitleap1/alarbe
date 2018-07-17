@@ -64,6 +64,7 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        $this->layout = '//home';
         return $this->render('index');
     }
 
