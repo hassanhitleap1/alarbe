@@ -158,4 +158,9 @@ class SiteController extends BaseController
             'model' => $model,
         ]);
     }
+
+
+    public function actionFilter($id){
+       return ""; 
+    }
 }

@@ -9,6 +9,8 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\SubCategories;
+
 
 
 AppAsset::register($this);
@@ -36,12 +38,17 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+
+    $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
+    foreach ($subCategories as $subCategory) {
+        $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'id' => $subCategory->id]];
+    }
+       
         // ['label' => 'About', 'url' => ['/site/about']],
         // ['label' => 'Contact', 'url' => ['/site/contact']],
-        ['label' => 'Admin', 'url' => ['/admin']],
-    ];
+       // ['label' => 'Admin', 'url' => ['/admin']],
+    //];
     // if (Yii::$app->user->isGuest) {
     //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
     //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
