@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use app\models\Contact;
 use app\models\Pages;
 use app\models\SignupForm;
+use app\models\Posts;
 
 class SiteController extends BaseController
 {
@@ -65,7 +66,8 @@ class SiteController extends BaseController
     public function actionIndex()
     {
         $this->layout = '//home';
-        return $this->render('index');
+        $posts=Posts::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();;
+        return $this->render('index',['posts'=>$posts]);
     }
 
     /**
