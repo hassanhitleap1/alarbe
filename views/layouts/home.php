@@ -71,6 +71,8 @@ AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-md-4">
+            <h3> copyright </h3>
+                <hr>
                 <p class="">&copy; alrbia <?= date('Y') ?></p>
             </div>
             <div class="col-md-4">
@@ -82,6 +84,8 @@ AppAsset::register($this);
                 </ul>
             </div>
             <div class="col-md-4">
+              <h3> campany name </h3>
+                <hr>
                 <p class="">alrbia</p>
             </div>
         </div>
