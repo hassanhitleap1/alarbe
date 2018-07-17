@@ -1,7 +1,12 @@
 $(document).ready(function() {
-    $('#Carousel').carousel({
-        interval: 5000
+
+    
+    $('#carousel').carousel({
+        interval: 100
     });
+
+
+
     $("#news-slider").owlCarousel({
         items : 4,
         itemsDesktop:[1199,3],
@@ -12,4 +17,6 @@ $(document).ready(function() {
         pagination:true,
         autoPlay:true
     });
+
+
 });
