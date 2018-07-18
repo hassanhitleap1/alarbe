@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\SubCategories;
 
 AppAsset::register($this);
 ?>
@@ -38,9 +39,12 @@ AppAsset::register($this);
     $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
 
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
-    foreach ($subCategories as $subCategory) {
-        $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'id' => $subCategory->id]];
+    if(!empty($subCategories)){
+        foreach ($subCategories as $subCategory) {
+            $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'id' => $subCategory->id]];
+        }
     }
+  
     // $menuItems = [
     //     ['label' => 'Home', 'url' => ['/site/index']],
     //     // ['label' => 'About', 'url' => ['/site/about']],

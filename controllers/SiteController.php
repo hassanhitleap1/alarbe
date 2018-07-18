@@ -161,6 +161,6 @@ class SiteController extends BaseController
 
 
     public function actionFilter($id){
-       return ""; 
+       return $this->render('filter'); 
     }
 }
