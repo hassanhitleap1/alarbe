@@ -13,6 +13,10 @@ use app\models\Contact;
 use app\models\Pages;
 use app\models\SignupForm;
 use app\models\Posts;
+use app\models\Areas;
+use app\models\Countries;
+use app\models\Categories;
+use app\models\SubCategories;
 
 class SiteController extends BaseController
 {
@@ -161,6 +165,16 @@ class SiteController extends BaseController
 
 
     public function actionFilter($id){
-       return $this->render('filter'); 
+        $areas = Areas::find()->all();
+        $countries =Countries::find()->all();
+        $categoris=Categories::find()->all();
+        $subCategories=SubCategories::find()->all();
+   
+       return $this->render('filter',[
+            'areas'=> $areas,
+            'countries'=> $countries,
+            'categoris'=> $categoris,
+            'subCategories'=> $subCategories
+        ]); 
     }
 }
