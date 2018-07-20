@@ -17,6 +17,7 @@ use app\models\Areas;
 use app\models\Countries;
 use app\models\Categories;
 use app\models\SubCategories;
+use app\models\FilterPosts;
 
 class SiteController extends BaseController
 {
@@ -169,12 +170,16 @@ class SiteController extends BaseController
         $countries =Countries::find()->all();
         $categoris=Categories::find()->all();
         $subCategories=SubCategories::find()->all();
-   
+        $model= new FilterPosts();
+        if ($model->load(Yii::$app->request->get())){
+            echo "gey form ";
+        }
        return $this->render('filter',[
             'areas'=> $areas,
             'countries'=> $countries,
             'categoris'=> $categoris,
-            'subCategories'=> $subCategories
+            'subCategories'=> $subCategories,
+            'model' => $model,
         ]); 
     }
 }

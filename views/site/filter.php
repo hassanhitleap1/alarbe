@@ -7,6 +7,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use kartik\select2\Select2;
+
 
 $this->title = 'filter';
 $this->params['breadcrumbs'][] = $this->title;
@@ -42,6 +44,39 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <option><?= $country->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
+                                </div>
+                                <?php 
+                                $form = ActiveForm::begin([
+                                ])
+                                ?>
+                                <div class="form-gtoup">
+                                <?php
+                                // $form->field($model, 'category')->widget(Select2::classname(), [
+                                //     //'data' => $data,
+                                //     'language' => 'en',
+                                //     'options' => ['placeholder' => 'Select a state ...'],
+                                //     'pluginOptions' => [
+                                //         'allowClear' => true
+                                //     ],
+                                // ]);
+                                ?>
+                                    <?php
+                                    // Select2::widget([
+                                    //     'model' => $model,
+                                    //     'attribute' => 'category',
+                                    //       'data' => function($categoris){
+                                    //           $data=[];
+                                    //           foreach ($categoris as $category ) {
+                                    //               $data[]= $category->name_en;
+                                    //           }
+                                    //           return $data;
+                                    //       },
+                                    //     'options' => ['placeholder' => 'Select a state ...'],
+                                    //     'pluginOptions' => [
+                                    //         'allowClear' => true
+                                    //     ],
+                                    // ]);
+                                     ?>
                                 </div>
                                 <div class="form-group">
                                         <select id="" class="form-control">
@@ -108,4 +143,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+    <?php ActiveForm::end() ?>
 </div>
