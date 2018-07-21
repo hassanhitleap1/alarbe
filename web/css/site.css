@@ -278,3 +278,6 @@ body{padding-top:20px;}
 .clear{
     padding-top: 10px;
 }
+.input-lg [select]{
+        width: 100%;
+}

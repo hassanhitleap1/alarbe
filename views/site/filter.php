@@ -21,39 +21,52 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         
                             <div class="form-inline">
-                                <div class="form-group col-md-2">
-                                        <select id="" class="form-control col-md-3 input-lg">
+                                <div class="form-group has-feedback ">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                             <?php foreach ($areas as $area) : ?>
                                                 <option><?= $area->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-2">
-                                        <select id="" class="form-control input-lg">
+                                <div class="form-group has-feedback ">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
-                                            <?php foreach ($categoris as $category) : ?>
+                                           <?php foreach ($categoris as $category) : ?>
                                                 <option><?= $category->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-2 ">
-                                        <select id="" class="form-control input-lg">
-                                            <option selected disabled>---</option>
-                                            <?php foreach ($countries as $country) : ?>
-                                                <option><?= $country->name_en ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                </div>
-                                <div class="form-group col-md-2">
-                                        <select id="" class="form-control input-lg " >
+                                <div class="form-group has-feedback ">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                 <option><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
-                                </div>
-                                <div class="form-group col-md-2">
+                                    </div>
+                                </div> 
+                                <div class="form-group has-feedback ">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <select id="myselect" class="form-control col-md-3 input-lg">
+                                            <option selected disabled>---</option>
+                                            <?php foreach ($countries as $country) : ?>
+                                                <option><?= $country->name_en ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>                                                                 
+
+                                <div class="form-group ">
                                     <button type="submit" class="btn btn-primary btn-block btn-lg">find</button>
                                 </div>
                                 
