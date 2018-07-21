@@ -19,11 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="panel-heading">Panel Heading</div>
             <div class="panel-body">
                     <div class="row">
-                        
+                        <div class="container">
                             <div class="form-inline">
-                                <div class="form-group has-feedback ">
+                                <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
                                         <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                             <?php foreach ($areas as $area) : ?>
@@ -32,9 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback ">
+                                <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
                                         <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                            <?php foreach ($categoris as $category) : ?>
@@ -43,9 +43,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback ">
+                                <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
                                         <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
@@ -54,9 +54,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </select>
                                     </div>
                                 </div> 
-                                <div class="form-group has-feedback ">
+                                <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
                                         <select id="myselect" class="form-control col-md-3 input-lg">
                                             <option selected disabled>---</option>
                                             <?php foreach ($countries as $country) : ?>
@@ -65,24 +65,26 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </select>
                                     </div>
                                 </div>                                                                 
-
-                                <div class="form-group ">
+                                <div class="form-group col-md-3">
                                     <button type="submit" class="btn btn-primary btn-block btn-lg">find</button>
-                                </div>
-                                
+                                </div> 
                             </div>
+                        </div>
 
                     </div>
-                    <div class="row clear">
-                        <div class="col-md-12">
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
-                            <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
-                        </div>
+                    <div class="container">
+                        <div class="row clear">
+                            <div class="col-md-12">
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
+                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
+                            </div>
                     </div>
+                    </div>
+                    
             </div>
         </div>
     </div>
