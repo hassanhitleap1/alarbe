@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
     <div class="row container">
-        <div class="panel panel-default">
-            <div class="panel-heading">Panel Heading</div>
+        <div class="panel panel-primary ">
+            <div class="panel-heading ">search box</div>
             <div class="panel-body">
                     <div class="row">
                         <div class="container">
