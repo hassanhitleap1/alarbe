@@ -22,6 +22,7 @@ class m180716_211355_create_posts_table extends Migration
             'title' => $this->string(),
             'description' => $this->string(),
             'sub_category_id'=>$this->integer(),
+            'area_id' => $this->integer(),
             'for_what'=>$this->smallInteger(),
             'create_at' => $this->date(),
             'update_at' => $this->date(),
@@ -35,6 +36,14 @@ class m180716_211355_create_posts_table extends Migration
             'id',
             'CASCADE'
         );
+        $this->addForeignKey(
+            'fk-areas-area_id',
+            'posts',
+            'area_id',
+            'areas',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**
@@ -44,6 +53,10 @@ class m180716_211355_create_posts_table extends Migration
     {
         $this->dropForeignKey(
             'fk-areas-sub_category_id',
+            'posts'
+        );
+        $this->dropForeignKey(
+            'fk-areas-area_id',
             'posts'
         );
         $this->dropTable('posts');
