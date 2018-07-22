@@ -91,43 +91,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
 </div>
-<div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                     <?= Html::img('images\slider\1.jpg', ['alt' => 'sds', 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
-                </div>
-                <div class="panel-body">
-                    aspojdopajs daskpo askapsd ]as[lpf[ ]]
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                     <?= Html::img('images\slider\1.jpg', ['alt' => 'sds', 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
-                </div>
-                <div class="panel-body">
-                    aspojdopajs daskpo askapsd ]as[lpf[ ]]
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                     <?= Html::img('images\slider\1.jpg', ['alt' => 'sds', 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
-                </div>
-                <div class="panel-body">
-                    aspojdopajs daskpo askapsd ]as[lpf[ ]]
-                </div>
-            </div>
-        </div>
-        
+<div class="row">    
         <?php foreach ($models as $model) :?>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <?= Html::img($model->imagePosts['image_path'], [ 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
+                        <?= Html::img($model->imagePosts['image_path'], [ 'class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']); ?>
                     </div>
                     <div class="panel-body">
                         <h3><?= $model->title ?></h3>
