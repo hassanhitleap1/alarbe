@@ -166,25 +166,37 @@ class SiteController extends BaseController
     }
 
 
-    public function actionFilter($id){
+    public function actionFilter(){
         $areas = Areas::find()->all();
         $countries =Countries::find()->all();
         $categoris=Categories::find()->all();
         $subCategories=SubCategories::find()->all();
         $model= new FilterPosts();
+        $request = Yii::$app->request;
         $query = Posts::find();
         $countQuery = clone $query;
+        // if(! empty( $request->get('area')) ){
+        //     $query->where(['area'=> $request->get('area')]);
+        // }
+        // if (!empty($request->get('category'))) {
+        //     $query->where(['category' => $request->get('category')]);
+        // }
+        // if (!empty($request->get('subCategory'))) {
+        //     $query->where(['subCategory' => $request->get('subCategory')]);
+        // }
+        // if (!empty($request->get('country'))) {
+        //     $query->where(['country' => $request->get('country')]);
+        // }
+        // if (!empty($request->get('for_what'))) {
+        //     $query->where(['for_what' => $request->get('for_what')]);
+        // }
+        
         $pagination = new Pagination([
             'defaultPageSize'=>4,
             'totalCount' => $countQuery->count()]);
         $models = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
-
-     
-        if ($model->load(Yii::$app->request->get())){
-            echo "gey form ";
-        }
        return $this->render('filter',[
             'areas'=> $areas,
             'countries'=> $countries,

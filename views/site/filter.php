@@ -19,27 +19,29 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="panel panel-primary ">
             <div class="panel-heading ">search box</div>
             <div class="panel-body">
+                <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter','method'=>'GET']) ?>
                     <div class="row">
+
                         <div class="container">
                             <div class="form-inline">
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg">
-                                            <option selected disabled>---</option>
-                                            <?php foreach ($areas as $area) : ?>
-                                                <option><?= $area->name_en ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                            <select id="myselect" class="form-control col-md-3 input-lg" name="area">
+                                                <option selected disabled>---</option>
+                                                <?php foreach ($areas as $area) : ?>
+                                                    <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg">
+                                        <select id="myselect" class="form-control col-md-3 input-lg" name="category">
                                             <option selected disabled>---</option>
                                            <?php foreach ($categoris as $category) : ?>
-                                                <option><?= $category->name_en ?></option>
+                                                <option value="<?= $category->id ?>"><?= $category->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -47,10 +49,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg">
+                                        <select id="myselect" class="form-control col-md-3 input-lg " name="subCategory">
                                             <option selected disabled>---</option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
-                                                <option><?= $subCategory->name_en ?></option>
+                                                <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -58,10 +60,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg">
+                                        <select id="myselect" class="form-control col-md-3 input-lg" name="country">
                                             <option selected disabled>---</option>
                                             <?php foreach ($countries as $country) : ?>
-                                                <option><?= $country->name_en ?></option>
+                                                <option value="<?= $country->id?>"><?= $country->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -73,19 +75,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
 
                     </div>
-                    <div class="container">
-                        <div class="row clear">
-                            <div class="col-md-12">
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 1</label>
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 2</label>
-                                <label class="checkbox-inline input-lg"><input type="checkbox" value="">Option 3</label>
-                            </div>
+                        <div class="container">
+                            <div class="row clear">
+                                <div class="col-md-12">
+                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what">Sale</label>
+                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what">rent</label>
+                                </div>
+                        </div>
                     </div>
-                    </div>
-                    
+                <?php ActiveForm::end() ?>   
             </div>
         </div>
     </div>
