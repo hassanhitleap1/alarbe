@@ -26,9 +26,20 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="form-inline">
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Country</div>
+                                        <select id="myselect" class="form-control col-md-3 input-lg" name="country">
+                                            <option selected disabled>Select Country</option>
+                                            <?php foreach ($countries as $country) : ?>
+                                                <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>                             
+                                <div class="form-group has-feedback col-md-2">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Area</div>
                                             <select id="myselect" class="form-control col-md-3 input-lg" name="area">
-                                                <option selected disabled>---</option>
+                                                <option selected disabled>Select Area</option>
                                                 <?php foreach ($areas as $area) : ?>
                                                     <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
                                                 <?php endforeach; ?>
@@ -37,9 +48,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Category</div>
                                         <select id="myselect" class="form-control col-md-3 input-lg" name="category">
-                                            <option selected disabled>---</option>
+                                            <option selected disabled>Select Category</option>
                                            <?php foreach ($categoris as $category) : ?>
                                                 <option value="<?= $category->id ?>"><?= $category->name_en ?></option>
                                             <?php endforeach; ?>
@@ -48,26 +59,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Sub Category</div>
                                         <select id="myselect" class="form-control col-md-3 input-lg " name="subCategory">
-                                            <option selected disabled>---</option>
+                                            <option selected disabled>Select Sub Category</option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                 <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div> 
-                                <div class="form-group has-feedback col-md-2">
-                                    <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg" name="country">
-                                            <option selected disabled>---</option>
-                                            <?php foreach ($countries as $country) : ?>
-                                                <option value="<?= $country->id?>"><?= $country->name_en ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>                                                                 
+                                                               
                                 <div class="form-group col-md-3">
                                     <button type="submit" class="btn btn-primary btn-block btn-lg">find</button>
                                 </div> 

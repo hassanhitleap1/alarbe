@@ -41,7 +41,7 @@ AppAsset::register($this);
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
     if(!empty($subCategories)){
         foreach ($subCategories as $subCategory) {
-            $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'id' => $subCategory->id]];
+            $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'subCategory' => $subCategory->id]];
         }
     }
   
