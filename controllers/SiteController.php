@@ -18,6 +18,7 @@ use app\models\Countries;
 use app\models\Categories;
 use app\models\SubCategories;
 use app\models\FilterPosts;
+use yii\data\Pagination;
 
 class SiteController extends BaseController
 {
@@ -171,6 +172,16 @@ class SiteController extends BaseController
         $categoris=Categories::find()->all();
         $subCategories=SubCategories::find()->all();
         $model= new FilterPosts();
+        $query = Posts::find();
+        $countQuery = clone $query;
+        $pagination = new Pagination([
+            'defaultPageSize'=>4,
+            'totalCount' => $countQuery->count()]);
+        $models = $query->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+     
         if ($model->load(Yii::$app->request->get())){
             echo "gey form ";
         }
@@ -180,6 +191,8 @@ class SiteController extends BaseController
             'categoris'=> $categoris,
             'subCategories'=> $subCategories,
             'model' => $model,
+            'models' => $models,
+            'pagination' => $pagination,
         ]); 
     }
 }

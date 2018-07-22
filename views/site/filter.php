@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use kartik\select2\Select2;
+use yii\widgets\LinkPager;
 
 
 $this->title = 'filter';
@@ -111,7 +112,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
-                <div class="col-md-6">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                      <?= Html::img('images\slider\1.jpg', ['alt' => 'sds', 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
@@ -121,4 +122,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
+        
+        <?php foreach ($models as $model) :?>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <?= Html::img('images\slider\1.jpg', [ 'class' => 'card-img-top', 'style' => 'width: 100%;']); ?>
+                    </div>
+                    <div class="panel-body">
+                        <h3><?= $model->title ?></h3>
+                        <?= $model->description ?>
+                    </div>
+                </div>
+            </div>
+        
+        <?php endforeach;?>
     </div>
+     <div class="row">
+             <?= LinkPager::widget([
+                'pagination' => $pagination,
+            ]); ?>
+        </div>
