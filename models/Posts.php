@@ -92,4 +92,19 @@ class Posts extends \yii\db\ActiveRecord
             return false;
         }
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImagesPosts()
+    {
+        return $this->hasMany(ImagesPost::className(), ['post_id' => 'id']);
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImagePosts()
+    {
+        return $this->hasMany(ImagesPost::className(), ['post_id' => 'id'])->where(['images_post.prime'=>1])->one();
+    }
 }
