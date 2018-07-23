@@ -31,6 +31,7 @@ class Countries extends \yii\db\ActiveRecord
         return [
             [['create_at', 'update_at'], 'safe'],
             [['name_en', 'name_ar'], 'string', 'max' => 255],
+            [['name_en', 'name_ar'], 'required'],
         ];
     }
 
@@ -55,5 +56,21 @@ class Countries extends \yii\db\ActiveRecord
     public static function find()
     {
         return new CountriesQuery(get_called_class());
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->create_at = date('Y-m-d h:m:s');
+            } else {
+                $this->update_at = date('Y-m-d h:m:s');
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+           
     }
 }

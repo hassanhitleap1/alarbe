@@ -70,4 +70,19 @@ class SubCategories extends \yii\db\ActiveRecord
     {
         return new SubCategoriesQuery(get_called_class());
     }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->create_at = date('Y-m-d h:m:s');
+            } else {
+                $this->update_at = date('Y-m-d h:m:s');
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

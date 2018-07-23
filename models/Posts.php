@@ -108,4 +108,22 @@ class Posts extends \yii\db\ActiveRecord
     {
         return $this->hasMany(ImagesPost::className(), ['post_id' => 'id'])->where(['images_post.prime'=>1])->one();
     }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->create_at = date('Y-m-d h:m:s');
+            } else {
+                $this->update_at = date('Y-m-d h:m:s');
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 }
