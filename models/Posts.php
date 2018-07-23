@@ -34,11 +34,15 @@ class Posts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sub_category_id', 'for_what'], 'integer'],
+           //[['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 10],
+           // [['files'], 'file'],
+            [['sub_category_id', 'for_what', 'area_id'], 'integer'],
             [['create_at', 'update_at'], 'safe'],
             [['title', 'description'], 'string', 'max' => 255],
             [['sub_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => SubCategories::className(), 'targetAttribute' => ['sub_category_id' => 'id']],
-            [['files'], 'file',  'extensions' => 'png, jpg', 'maxFiles' => 10],
+           // [['files'], 'file',  'extensions' => 'png, jpg', 'maxFiles' => 10],
+            [['title', 'description', 'sub_category_id', 'for_what', 'area_id'], 'required'],
+          
         ];
     }
 
