@@ -36,6 +36,7 @@ class Areas extends \yii\db\ActiveRecord
             [['create_at', 'update_at'], 'safe'],
             [['name_en', 'name_ar'], 'string', 'max' => 255],
             [['id_country'], 'exist', 'skipOnError' => true, 'targetClass' => Countries::className(), 'targetAttribute' => ['id_country' => 'id']],
+            [['name_en', 'name_ar', 'id_country'], 'required'],
         ];
     }
 

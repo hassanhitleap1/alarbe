@@ -36,7 +36,9 @@ class SubCategories extends \yii\db\ActiveRecord
             [['category_id'], 'integer'],
             [['name_en', 'name_ar'], 'string', 'max' => 255],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'id']],
+            [['name_en', 'name_ar', 'category_id'], 'required'],
         ];
+        
     }
 
     /**

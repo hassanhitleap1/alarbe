@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name_en',
             'name_ar',
-            'id_country',
+            'country.name_en',
             'create_at',
             //'update_at',
 

@@ -31,6 +31,7 @@ class Categories extends \yii\db\ActiveRecord
         return [
             [['create_at', 'update_at'], 'safe'],
             [['name_en', 'name_ar'], 'string', 'max' => 255],
+            [['name_en', 'name_ar'], 'required'], 
         ];
     }
 
