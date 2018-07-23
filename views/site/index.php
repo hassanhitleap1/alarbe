@@ -1,5 +1,7 @@
 <?php
 
+use yii\bootstrap\Html;
+
 /* @var $this yii\web\View */
 
 $this->title = 'alarbia';
@@ -26,77 +28,22 @@ $this->title = 'alarbia';
                     </p>
                     <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
                 </div>
- 
-                <div class="post-slide">
-                    <img src="images/img-2.jpg" alt="">
-                    <div class="post-date">
-                        <span class="month">Nov</span>
-                        <span class="date">8</span>
+                <?php foreach($posts as $post): ?>
+                    <div class="post-slide">
+                        <?= Html::img($post->imagePosts['image_path'], []); ?>
+                        <div class="post-date">
+                            <span class="month">Nov</span>
+                            <span class="date">8</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="#"><?=$post->title	?>st</a>
+                        </h3>
+                        <p class="post-description">
+                            <?=$post->description?>	
+                        </p>
+                        <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
                     </div>
-                    <h3 class="post-title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
-                    </h3>
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
-                    </p>
-                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
-                </div>
-                <div class="post-slide">
-                    <img src="images/img-2.jpg" alt="">
-                    <div class="post-date">
-                        <span class="month">Nov</span>
-                        <span class="date">8</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
-                    </h3>
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
-                    </p>
-                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
-                </div>
-                <div class="post-slide">
-                    <img src="images/img-3.jpg" alt="">
-                    <div class="post-date">
-                        <span class="month">Nov</span>
-                        <span class="date">8</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
-                    </h3>
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
-                    </p>
-                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
-                </div>
-                <div class="post-slide">
-                    <img src="images/img-4.jpg" alt="">
-                    <div class="post-date">
-                        <span class="month">Nov</span>
-                        <span class="date">8</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
-                    </h3>
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
-                    </p>
-                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
-                </div>
-                <div class="post-slide">
-                    <img src="images/img-5.jpg" alt="">
-                    <div class="post-date">
-                        <span class="month">Nov</span>
-                        <span class="date">8</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
-                    </h3>
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......
-                    </p>
-                    <a href="#" class="read-more">read more<i class="fa fa-chevron-right"></i></a>
-                </div>
+                <?php endforeach; ?>
                 
             </div>
         </div>
