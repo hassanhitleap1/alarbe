@@ -197,7 +197,7 @@ body{padding-top:20px;}
     font-weight: bold;
     color: #fff;
     padding: 0 10px;
-    background: #14bf9b;;
+    background: #000000;;
     text-transform: uppercase;
 }
 .post-slide .date{
@@ -208,7 +208,7 @@ body{padding-top:20px;}
     margin: 20px 0;
 }
 .post-slide .post-title a{
-    color:#14bf9b;
+    color:#000000;
     font-size:22px;
     text-transform:capitalize;
     transition: all 0.50s ease 0s;
@@ -226,7 +226,7 @@ body{padding-top:20px;}
     padding: 15px 0;
     list-style: none;
     text-align: center;
-    background: #14bf9b;
+    background: #000000;
 }
 .post-slide .post-bar li{
     display: inline-block;
