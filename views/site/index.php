@@ -9,9 +9,6 @@ $this->title = 'alarbia';
 
 <?= $this->render('/layouts/slider');?>
 <!-- end fiexd silder -->
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -123,15 +120,15 @@ $this->title = 'alarbia';
 </div>
 
 <script>
-    $(document).ready(function() {
-    $("#news-slider").owlCarousel({
-        items : 3,
-        itemsDesktop:[1199,2],
-        itemsDesktopSmall:[980,2],
-        itemsMobile: [600, 1],
-        navigation : false,
-        pagination:false,
-        autoPlay : true
-    });
-});
+//     $(document).ready(function() {
+//     $("#news-slider").owlCarousel({
+//         items : 3,
+//         itemsDesktop:[1199,2],
+//         itemsDesktopSmall:[980,2],
+//         itemsMobile: [600, 1],
+//         navigation : false,
+//         pagination:false,
+//         autoPlay : true
+//     });
+// });
 </script>
