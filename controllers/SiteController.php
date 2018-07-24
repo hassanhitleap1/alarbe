@@ -210,7 +210,17 @@ class SiteController extends BaseController
     }
 
     public function actionShowPost($id){
-        $model=Posts::find($id);
-        return $this->render('show-post',['model'=>$model]);
+        return $this->render('show-post', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = Posts::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }
