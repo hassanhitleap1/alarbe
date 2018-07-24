@@ -46,17 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             </select>
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback col-md-2">
-                                    <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Category</div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg" name="category">
-                                            <option selected disabled>Select Category</option>
-                                           <?php foreach ($categoris as $category) : ?>
-                                                <option value="<?= $category->id ?>"><?= $category->name_en ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>
+                    
                                 <div class="form-group has-feedback col-md-2">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Sub Category</div>
