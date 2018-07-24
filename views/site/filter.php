@@ -88,9 +88,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= Html::img($model->imagePosts['image_path'], [ 'class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']); ?>
                     </div>
                     <div class="panel-body">
+                        <?= Html::a('<h3>'.$model->title. '</h3>', ['/site/show-post', 'id' => $model->id]) ?>
                         <h3><?= $model->title ?></h3>
                         <?= $model->description ?>
-                        <?php var_dump($model->imagePosts['image_path']);?>
+
                     </div>
                 </div>
             </div>

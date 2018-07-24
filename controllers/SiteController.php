@@ -208,4 +208,9 @@ class SiteController extends BaseController
             'pagination' => $pagination,
         ]); 
     }
+
+    public function actionShowPost($id){
+        $model=Posts::find($id);
+        return $this->render('show-post',['model'=>$model]);
+    }
 }
