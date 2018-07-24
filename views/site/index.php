@@ -10,6 +10,7 @@ $this->title = 'alarbia';
 <?= $this->render('/layouts/slider');?>
 <!-- end fiexd silder -->
 <div class="container">
+    <div chdir
     <div class="row">
         <div class="col-md-12">
             <div id="news-slider" class="owl-carousel">
