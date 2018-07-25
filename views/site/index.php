@@ -17,7 +17,7 @@ $this->title = 'alarbia';
                 <?php foreach ($posts as $post) :?>
                 <div class="post-slide">
                     <div class="post-img">
-                        <a href="#"><?= Html::img($post->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => 'height: 322px;']); ?></a>
+                        <?= Html::a(Html::img($post->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => 'height: 322px;']), ['/site/show-post', 'id' => $post->id]) ?>
                     </div>
                     <div class="post-content">
                         <div class="post-date">
