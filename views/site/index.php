@@ -14,18 +14,19 @@ $this->title = 'alarbia';
     <div class="row">
         <div class="col-md-12">
             <div id="news-slider" class="owl-carousel">
+                <?php foreach ($posts as $post) :?>
                 <div class="post-slide">
                     <div class="post-img">
-                        <a href="#"><img src="images/img-1.jpg" alt=""></a>
+                        <a href="#"><?= Html::img($post->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => 'height: 322px;']); ?></a>
                     </div>
                     <div class="post-content">
                         <div class="post-date">
                             <span class="month">apr</span>
                             <span class="date">10</span>
                         </div>
-                        <h5 class="post-title"><a href="#">Latest News Post</a></h5>
+                        <h5 class="post-title"><?= Html::a($post->title , ['/site/show-post', 'id' => $post->id]) ?></h5>
                         <p class="post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
+                            <?= substr($post->description, 0, 40)  ?>
                         </p>
                     </div>
                     <ul class="post-bar">
@@ -34,87 +35,8 @@ $this->title = 'alarbia';
                         <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
                     </ul>
                 </div>
-                <div class="post-slide">
-                    <div class="post-img">
-                        <a href="#"><img src="images/img-1.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-date">
-                            <span class="month">apr</span>
-                            <span class="date">10</span>
-                        </div>
-                        <h5 class="post-title"><a href="#">Latest News Post</a></h5>
-                        <p class="post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
-                        </p>
-                    </div>
-                    <ul class="post-bar">
-                        <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
-                        <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
-                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
-                    </ul>
-                </div>
-                <div class="post-slide">
-                    <div class="post-img">
-                        <a href="#"><img src="images/img-1.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-date">
-                            <span class="month">apr</span>
-                            <span class="date">10</span>
-                        </div>
-                        <h5 class="post-title"><a href="#">Latest News Post</a></h5>
-                        <p class="post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
-                        </p>
-                    </div>
-                    <ul class="post-bar">
-                        <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
-                        <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
-                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
-                    </ul>
-                </div>
-                <div class="post-slide">
-                    <div class="post-img">
-                        <a href="#"><img src="images/img-1.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-date">
-                            <span class="month">apr</span>
-                            <span class="date">10</span>
-                        </div>
-                        <h5 class="post-title"><a href="#">Latest News Post</a></h5>
-                        <p class="post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
-                        </p>
-                    </div>
-                    <ul class="post-bar">
-                        <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
-                        <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
-                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
-                    </ul>
-                </div>
- 
-                <div class="post-slide">
-                    <div class="post-img">
-                        <a href="#"><img src="images/img-2.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-date">
-                            <span class="month">apr</span>
-                            <span class="date">12</span>
-                        </div>
-                        <h5 class="post-title"><a href="#">Latest News Post</a></h5>
-                        <p class="post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
-                        </p>
-                    </div>
-                    <ul class="post-bar">
-                        <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
-                        <li> <i class="fa fa-comments"></i> <a href="#">3</a> </li>
-                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">5 Likes</a> </li>
-                    </ul>
-                </div>
+                <?php endforeach;?>
+
             </div>
         </div>
     </div>
