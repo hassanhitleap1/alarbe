@@ -21,8 +21,10 @@ $this->title = 'alarbia';
                     </div>
                     <div class="post-content">
                         <div class="post-date">
-                            <span class="month">apr</span>
-                            <span class="date">10</span>
+                            <span class="month"><?php 
+                                            $old_date_timestamp = strtotime($post->create_at);
+                                            echo   date('F d y', $old_date_timestamp);?></span>
+                            <span class="date"><?= date('d', $old_date_timestamp) ?></span>
                         </div>
                         <h5 class="post-title"><?= Html::a($post->title , ['/site/show-post', 'id' => $post->id]) ?></h5>
                         <p class="post-description">
@@ -30,9 +32,9 @@ $this->title = 'alarbia';
                         </p>
                     </div>
                     <ul class="post-bar">
-                        <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
-                        <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
-                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
+                        <li> <i class="fa fa-users"></i> <?= Html::a('category :'.$post->subCategory->name_en, ['/site/filter', 'subCategory' => $post->subCategory->id ]) ?>  </li>
+                        <!-- <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
+                        <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li> -->
                     </ul>
                 </div>
                 <?php endforeach;?>
@@ -42,16 +44,3 @@ $this->title = 'alarbia';
     </div>
 </div>
 
-<script>
-//     $(document).ready(function() {
-//     $("#news-slider").owlCarousel({
-//         items : 3,
-//         itemsDesktop:[1199,2],
-//         itemsDesktopSmall:[980,2],
-//         itemsMobile: [600, 1],
-//         navigation : false,
-//         pagination:false,
-//         autoPlay : true
-//     });
-// });
-</script>
