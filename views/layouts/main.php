@@ -26,6 +26,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+    
 
 <div class="wrap">
 <?php
@@ -36,7 +37,7 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+    $menuItems[] = ['label' => Yii::t('app','Home'), 'url' => ['/site/index']];
 
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
     if(!empty($subCategories)){

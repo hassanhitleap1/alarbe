@@ -32,13 +32,13 @@ AppAsset::register($this);
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::$app->name ,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+    $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
     if (!empty($subCategories)) {
         foreach ($subCategories as $subCategory) {

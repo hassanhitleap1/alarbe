@@ -11,10 +11,17 @@ class BaseController extends Controller
 {
     public function beforeAction($action)
     {
+        \Yii::$app->language = 'ar';
         if(isset($_GET['lang'])){
 
-          } 
-          return true;
+          }
+        // $cookies = Yii::$app->request->cookies;
+        // if ($cookies->has('lang')) {
+        //     Yii::$app->language = $cookies->getValue('lang');
+        // } else {
+        //     Yii::$app->language = 'en';
+        // }
+        return parent::beforeAction($action);
     }
 
 }
