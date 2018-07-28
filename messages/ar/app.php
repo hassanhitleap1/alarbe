@@ -6,5 +6,7 @@
 return [
     'Home' => 'الرئيسي',
     'Language'=>'اللغة',
+    'English' => 'English',
+    'Arabic' => 'العربية',
     
 ];
