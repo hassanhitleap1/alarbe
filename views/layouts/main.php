@@ -50,14 +50,14 @@ AppAsset::register($this);
         'items' => [
             [
                 'label' => Yii::t('app', 'Arabic') . Html::img('images\flag\if_Saudi-Arabia.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
-                'url' => ['site/language', 'set' => 'ar'],
+                'url' => Yii::$app->helperUrl->urlHere('ar'),
             ],
 
             '<li class="divider"></li>',
 
             [
                 'label' => Yii::t('app', 'English') . Html::img('images\flag\if_United-Kingdom.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
-                'url' => ['site/language', 'set' => 'en'],
+                'url' => Yii::$app->helperUrl->urlHere('en'),
 
             ],
 

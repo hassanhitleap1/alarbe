@@ -20,6 +20,12 @@ $config = [
         ],
     ],
     'components' => [
+        'componentLang' => [
+            'class' => 'app\components\ComponentLang',
+        ],
+        'helperUrl'=>[
+            'class' => 'app\components\UrlHelper', 
+        ],
         'i18n' => [
             'translations' => [
                 'app*' => [
