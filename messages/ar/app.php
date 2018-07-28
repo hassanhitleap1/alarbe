@@ -4,5 +4,7 @@
  * Translation map for nl-NL
  */
 return [
-    'Home' => 'الرئيسي'
+    'Home' => 'الرئيسي',
+    'Language'=>'اللغة',
+    
 ];

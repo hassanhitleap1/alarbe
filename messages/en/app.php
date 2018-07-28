@@ -4,5 +4,6 @@
  * Translation map for nl-NL
  */
 return [
-    'Home' => 'Home'
+    'Home' => 'Home',
+    'Language' => 'Language',
 ];

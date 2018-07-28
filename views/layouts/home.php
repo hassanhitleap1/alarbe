@@ -37,6 +37,7 @@ AppAsset::register($this);
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
+        
     ]);
     $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
@@ -45,7 +46,24 @@ AppAsset::register($this);
             $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'subCategory' => $subCategory->id]];
         }
     }
-       
+$menuItems[] = [
+    'label' => Yii::t('app', 'Language'),
+    'items' => [
+        [
+            'label' => Yii::t('app', 'Language'),
+            'url' => ['site/language', 'set' => 'en'],
+        ],
+
+        '<li class="divider"></li>',
+
+        [
+            'label' => Yii::t('app', 'Language'),
+            'url' => ['site/language', 'set' => 'ar'],
+
+        ],
+
+    ],
+];    
         // ['label' => 'About', 'url' => ['/site/about']],
         // ['label' => 'Contact', 'url' => ['/site/contact']],
        // ['label' => 'Admin', 'url' => ['/admin']],
@@ -66,6 +84,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
+        'encodeLabels' => false, 
     ]);
     NavBar::end();
     ?>
