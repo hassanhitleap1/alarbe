@@ -6,4 +6,6 @@
 return [
     'Home' => 'Home',
     'Language' => 'Language',
+    'English'=> 'English',
+    'Arabic'=> 'Arabic',
 ];
