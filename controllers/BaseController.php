@@ -11,8 +11,29 @@ class BaseController extends Controller
 {
     public function beforeAction($action)
     {
+        $cookies = Yii::$app->response->cookies;
+
+        if(isset($_GET['lang'])){
+            $lang= $_GET['lang'];
+            if ($lang == 'ar') {
+                $cookies->add(new \yii\web\Cookie([
+                    'name' => 'lang',
+                    'value' => 'ar',
+                    'expire' => time() + 86400 * 365,
+                ]));
+                Yii::$app->language = $cookies->getValue('lang');
+            } else {
+                $cookies->add(new \yii\web\Cookie([
+                    'name' => 'lang',
+                    'value' => 'en',
+                    'expire' => time() + 86400 * 365,
+                ]));
+                Yii::$app->language = $cookies->getValue('lang');
+            }
+        }
         return parent::beforeAction($action);
     }
+
 
 }
 ?>

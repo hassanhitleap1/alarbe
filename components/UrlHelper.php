@@ -8,11 +8,9 @@ use yii\helpers\VarDumper;
 
 class UrlHelper extends Component
 {
-    public function urlHere($lang)
+    public function urlHere()
     {
-        Yii::$app->componentLang->setlang($lang);
-        VarDumper::dump($lang);
-        $url = "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+        $url = "{$_SERVER['REQUEST_URI']}";
         $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
         return $escaped_url;
     }
