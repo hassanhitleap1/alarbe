@@ -49,13 +49,13 @@ AppAsset::register($this);
         'label' => Yii::t('app', 'Language'),
         'items' => [
             [
-                'label' => Yii::t('app', 'Arabic') . Html::img('images\flag\if_Saudi-Arabia.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
+                'label' => Yii::t('app', 'Arabic') . Html::img(Yii::$app->request->BaseUrl.'\images\flag\if_Saudi-Arabia.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
                 'url' => ['/', 'lang' => 'ar']
             //  Yii::$app->helperUrl->urlHere('ar'),
             ],
 
             [
-                'label' => Yii::t('app', 'English') . Html::img('images\flag\if_United-Kingdom.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
+                'label' => Yii::t('app', 'English') . Html::img(Yii::$app->request->BaseUrl .'\images\flag\if_United-Kingdom.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
                 'url' => ['/', 'lang' => 'en']
                 //  Yii::$app->helperUrl->urlHere('en'),
 
