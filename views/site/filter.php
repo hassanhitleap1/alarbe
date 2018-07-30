@@ -24,10 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="container">
                             <div class="form-inline">
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Country</div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg" name="country">
+                                        <select id="myselect" class="form-control col-md-3 " name="country">
                                             <option selected disabled>Select Country</option>
                                             <?php foreach ($countries as $country) : ?>
                                                 <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
@@ -35,10 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </select>
                                     </div>
                                 </div>                             
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Area</div>
-                                            <select id="myselect" class="form-control col-md-3 input-lg" name="area">
+                                            <select id="myselect" class="form-control col-md-3 " name="area">
                                                 <option selected disabled>Select Area</option>
                                                 <?php foreach ($areas as $area) : ?>
                                                     <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
@@ -47,33 +47,40 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                 </div>
                     
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Sub Category</div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg " name="subCategory">
-                                            <option selected disabled>Select Sub Category</option>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Category</div>
+                                        <select id="myselect" class="form-control col-md-3" name="subCategory">
+                                            <option selected disabled>Select  Category</option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                 <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div> 
-                                                               
-                                <div class="form-group col-md-3">
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">find</button>
-                                </div> 
                             </div>
                         </div>
 
                     </div>
-                        <div class="container">
-                            <div class="row clear">
-                                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row clear">
+                                <div class="col-md-2 ">
                                     <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what">Sale</label>
                                     <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what">rent</label>
                                 </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                    <input type="text" class="form-control " id="search" placeholder="search">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group ">
+                                            <button type="submit" class="btn btn-primary btn-block ">find</button>
+                                    </div>
+                                </div>      
                         </div>
                     </div>
+                    
                 <?php ActiveForm::end() ?>   
             </div>
         </div>
