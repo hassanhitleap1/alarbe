@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <?= Html::img($model->imagePosts['image_path'], [ 'class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']); ?>
+                    <?= Html::a(Html::img($model->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']), ['/site/show-post', 'id' => $model->id]) ?>
                     </div>
                     <div class="panel-body">
                         <?= Html::a('<h3>'.$model->title. '</h3>', ['/site/show-post', 'id' => $model->id]) ?>
