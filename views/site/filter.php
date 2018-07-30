@@ -96,9 +96,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="panel-body">
                         <?= Html::a('<h3>'.$model->title. '</h3>', ['/site/show-post', 'id' => $model->id]) ?>
-                        <h3><?= $model->title ?></h3>
-                        <?= $model->description ?>
-
+                        <?= substr($model->description,40 ); ?>
+                        <?= Html::a("read more", ['/site/show-post', 'id' => $model->id]) ?>
                     </div>
                 </div>
             </div>
