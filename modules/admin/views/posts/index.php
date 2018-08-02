@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\PostsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,11 +27,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'title',
-            'description',
-            'sub_category_id',
-            'for_what',
+            [
+                'attribute' => 'description',
+                'value' => 'description',
+                'format' => 'raw',
+            ],
+
+            'subCategory.name_ar',
+            [
+                'attribute'=> 'for_what',
+                'value'=>function($dataProvider){
+                    if($dataProvider->for_what == 1){
+                        return 'rent';
+                    }
+                    return 'sell';
+                },
+            ],
             //'create_at',
             //'update_at',
 
@@ -38,4 +51,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <?php Pjax::end(); ?>
+  
 </div>
