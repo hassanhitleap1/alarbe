@@ -34,8 +34,9 @@ class Posts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-           //[['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 10],
+           [['files'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 10],
            // [['files'], 'file'],
+           // ['files', 'image', 'minWidth' => 250, 'maxWidth' => 250, 'minHeight' => 250, 'maxHeight' => 250, 'extensions' => 'jpg, gif, png', 'maxSize' => 1024 * 1024 * 2, 'maxFiles' => 10],
             [['sub_category_id', 'for_what', 'area_id'], 'integer'],
             [['create_at', 'update_at'], 'safe'],
             [['title', 'description'], 'string', 'max' => 255],
