@@ -35,7 +35,7 @@ $this->title = 'alarbia';
                                         <select id="myselect" class="form-control col-md-3 " name="country">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
-                                                <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
+                                                <option value="<?= $country->id ?>"><?= $country['name_' . Yii::$app->language] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -46,7 +46,7 @@ $this->title = 'alarbia';
                                             <select id="myselect" class="form-control col-md-3 " name="area">
                                                 <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
-                                                    <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
+                                                    <option value="<?= $area->id ?>"><?= $area['name_' . Yii::$app->language] ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                     </div>
@@ -58,7 +58,7 @@ $this->title = 'alarbia';
                                         <select id="myselect" class="form-control col-md-3" name="subCategory">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?> </option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
-                                                <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
+                                                <option value="<?= $subCategory->id ?>"><?= $subCategory['name_' . Yii::$app->language] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

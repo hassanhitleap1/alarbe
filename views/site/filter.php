@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <select id="myselect" class="form-control col-md-3 " name="country">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
-                                                <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
+                                                <option value="<?= $country->id ?>"><?= $country['name_'.Yii::$app->language] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
