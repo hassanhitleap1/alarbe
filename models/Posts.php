@@ -56,11 +56,11 @@ class Posts extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'title' => Yii::t('app', 'Title'),
             'description' => Yii::t('app', 'Description'),
-            'sub_category_id' => Yii::t('app', 'Sub Category '),
+            'sub_category_id' => Yii::t('app', 'Sub_Category '),
             'area_id'=> Yii::t('app', 'Area'),
-            'for_what' => Yii::t('app', 'For What'),
-            'create_at' => Yii::t('app', 'Create At'),
-            'update_at' => Yii::t('app', 'Update At'),
+            'for_what' => Yii::t('app', 'For_What'),
+            'create_at' => Yii::t('app', 'Create_At'),
+            'update_at' => Yii::t('app', 'Update_At'),
         ];
     }
 

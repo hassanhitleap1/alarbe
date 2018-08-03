@@ -48,8 +48,8 @@ class Pages extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'Name'),
             'title' => Yii::t('app', 'Title'),
             'content' => Yii::t('app', 'Content'),
-            'create_at' => Yii::t('app', 'Create At'),
-            'update_at' => Yii::t('app', 'Update At'),
+            'create_at' => Yii::t('app', 'Create_At'),
+            'update_at' => Yii::t('app', 'Update_At'),
         ];
     }
 
