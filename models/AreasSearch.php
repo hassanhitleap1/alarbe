@@ -18,8 +18,8 @@ class AreasSearch extends Areas
     public function rules()
     {
         return [
-            [['id', 'id_country'], 'integer'],
-            [['name_en', 'name_ar', 'create_at', 'update_at'], 'safe'],
+            [['id'], 'integer'],
+            [['name_en', 'name_ar', 'id_country','create_at', 'update_at'], 'safe'],
         ];
     }
 
@@ -42,7 +42,7 @@ class AreasSearch extends Areas
     public function search($params)
     {
         $query = Areas::find();
-
+        $query->joinWith(['country']);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -60,13 +60,13 @@ class AreasSearch extends Areas
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_country' => $this->id_country,
             'create_at' => $this->create_at,
             'update_at' => $this->update_at,
         ]);
 
         $query->andFilterWhere(['like', 'name_en', $this->name_en])
-            ->andFilterWhere(['like', 'name_ar', $this->name_ar]);
+            ->andFilterWhere(['like', 'name_ar', $this->name_ar])
+            ->andFilterWhere(['like', 'country.name_en', $this->id_country]);
 
         return $dataProvider;
     }
