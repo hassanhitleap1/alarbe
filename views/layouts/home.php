@@ -83,20 +83,20 @@ $menuItems[] = [
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-            <h3> copyright </h3>
+            <h3> <?= Yii::t('app', 'Copyright') ?> </h3>
                 <hr>
                 <p class="">&copy; alrbia <?= date('Y') ?></p>
             </div>
             <div class="col-md-4">
-                <h3>connect us </h3>
+                <h3><?= Yii::t('app', 'Connect_us') ?> </h3>
                 <hr>
                 <ul>
-                    <li><?= Html::a('About', ['site/about']) ?></li>
-                     <li><?= Html::a('Contact', ['site/contact']) ?></li>
+                    <li><?= Html::a(Yii::t('app', 'About') , ['site/about']) ?></li>
+                     <li><?= Html::a(Yii::t('app', 'Contact') , ['site/contact']) ?></li>
                 </ul>
             </div>
             <div class="col-md-4">
-              <h3> campany name </h3>
+              <h3> <?= Yii::t('app', 'Campany_name') ?>  </h3>
                 <hr>
                 <p class="">alrbia</p>
             </div>

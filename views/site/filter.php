@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-contact">
     <div class="row container">
         <div class="panel panel-primary ">
-            <div class="panel-heading ">search box</div>
+            <div class="panel-heading "><?= Yii::t('app', 'Searchbox') ?></div>
             <div class="panel-body">
                 <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter','method'=>'GET']) ?>
                     <div class="row">
@@ -26,9 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="form-inline">
                                 <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Country</div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Country') ?></div>
                                         <select id="myselect" class="form-control col-md-3 " name="country">
-                                            <option selected disabled>Select Country</option>
+                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
                                                 <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
                                             <?php endforeach; ?>
@@ -37,9 +37,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>                             
                                 <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Area</div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Area') ?></div>
                                             <select id="myselect" class="form-control col-md-3 " name="area">
-                                                <option selected disabled>Select Area</option>
+                                                <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
                                                     <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
                                                 <?php endforeach; ?>
@@ -49,9 +49,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                                 <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Category</div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Category') ?></div>
                                         <select id="myselect" class="form-control col-md-3" name="subCategory">
-                                            <option selected disabled>Select  Category</option>
+                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?>  </option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                 <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
@@ -65,17 +65,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="container">
                         <div class="row clear">
                                 <div class="col-md-2 ">
-                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what">Sale</label>
-                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what">rent</label>
+                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what"><?= Yii::t('app', 'Sale') ?></label>
+                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what"><?= Yii::t('app', 'Rent') ?></label>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                    <input type="text" class="form-control " id="search" placeholder="search">
+                                    <input type="text" class="form-control " id="search" placeholder="<?= Yii::t('app', 'Search') ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group ">
-                                            <button type="submit" class="btn btn-primary btn-block ">find</button>
+                                            <button type="submit" class="btn btn-primary btn-block "><?= Yii::t('app', 'Find') ?></button>
                                     </div>
                                 </div>      
                         </div>
