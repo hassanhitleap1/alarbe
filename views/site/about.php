@@ -42,8 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="container" style="margin-top: 28px;">
     <hr style="margin-top: 28px;">
     <div class="row">
+        <div class="col-md-12 text-center">
+            <?php //echo $page->title ?>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
-            <?php echo "ddddd"?>
+            <?php //$page->content ?>
         </div>
     </div>
 </div>
