@@ -21,7 +21,7 @@ $this->title = 'alarbia';
     <div class="item active">
       <?= Html::img('images\slider\1.jpg', ['alt' => 'sds']); ?>
        <div class="carousel-caption d-none d-md-block">
-       <div class="panel panel-primary ">
+       <div class="panel panel-primary display-hiden-div">
         <div class="panel-heading"><?=Yii::t('app','Search_box')?></div>
         <div class="panel-body">
                         <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter', 'method' => 'GET']) ?>
