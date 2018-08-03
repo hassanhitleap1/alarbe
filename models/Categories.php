@@ -42,10 +42,10 @@ class Categories extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'name_en' => Yii::t('app', 'Name En'),
-            'name_ar' => Yii::t('app', 'Name Ar'),
-            'create_at' => Yii::t('app', 'Create At'),
-            'update_at' => Yii::t('app', 'Update At'),
+            'name_en' => Yii::t('app', 'Name_En'),
+            'name_ar' => Yii::t('app', 'Name_Ar'),
+            'create_at' => Yii::t('app', 'Create_At'),
+            'update_at' => Yii::t('app', 'Update_At'),
         ];
     }
 
