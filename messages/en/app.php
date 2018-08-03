@@ -25,4 +25,7 @@ return [
     'Campany_name'=> 'campany name',
     'About'=> 'About',
     'Contact'=> 'Contact',
+    'Phone'=> 'Phone',
+    'Address'=> 'Address',
+    'Address_campany'=> 'Address_campany',
 ];

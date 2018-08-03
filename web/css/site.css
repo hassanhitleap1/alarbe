@@ -236,3 +236,21 @@ a.desc:after {
         display: none;
     } */
 } 
+
+
+/* about us page  */
+.box-con{
+    /* border: solid; */
+    border-radius: 43px;
+    background:blue;
+}
+.box-con h3{
+color: white;
+}
+.box-con p{
+   color: white; 
+}
+.box-con .glyphicon{
+   color: white;
+   font-size: 40px; 
+} 
