@@ -204,7 +204,13 @@ class SiteController extends BaseController
         if (!empty($request->get('rent'))) {
             $query->where(['for_what' => Posts::RENT]);
         }
-        
+        if (!empty($request->get('search'))) {
+            // $search =$request->get('search');
+            // $query->where(function ($query) use ($search) {
+            //     $query->orwhere('title', 'like', '%' . trim($search) . '%')
+            //         ->orwhere('description', 'like', '%' . trim($search) . '%');
+            // });
+        }
         $pagination = new Pagination([
             'defaultPageSize'=>4,
             'totalCount' => $countQuery->count()]);

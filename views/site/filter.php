@@ -96,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                    <input type="text" class="form-control " id="search" placeholder="<?= Yii::t('app', 'Search') ?>">
+                                    <input type="text" class="form-control " id="search" placeholder="<?= Yii::t('app', 'Search') ?>" name="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>"> 
                                     </div>
                                 </div>
                                 <div class="col-md-4">
