@@ -15,11 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= $model->title?> </h1>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <?= Html::img($model->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => '']); ?>
-    </div>
-</div>
+
+
 <div class="row">
     <div class="col-md-12">
         <?= $model->description ?>
@@ -66,17 +63,21 @@ $this->params['breadcrumbs'][] = $this->title;
 }
 </style>
 
+
 <div class="carousel slide article-slide" id="article-photo-carousel">
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner cont-slider">
 
     <div class="item active">
-      <img alt="" title="" src="http://placehold.it/600x400">
+     <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '','title'=>'', 'style' => '']); ?>
     </div>
+    <?php foreach ($model->imagesPosts as $image) : ?>
     <div class="item">
-      <img alt="" title="" src="http://placehold.it/600x400">
+        <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
     </div>
+    <?php endforeach; ?>
+
     <div class="item">
       <img alt="" title="" src="http://placehold.it/600x400">
     </div>
@@ -87,21 +88,16 @@ $this->params['breadcrumbs'][] = $this->title;
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-      <img alt="" src="http://placehold.it/250x180">
+      <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '', 'title' => '', 'style' => '']); ?>
     </li>
-    <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-      <img alt="" src="http://placehold.it/250x180">
+    <?php $i=0;?>
+    <?php foreach ($model->imagesPosts as $image) : ?>
+    <li class="" data-slide-to="<?= ++$i?>" data-target="#article-photo-carousel">
+      <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
     </li>
-    <li class="" data-slide-to="2" data-target="#article-photo-carousel">
-      <img alt="" src="http://placehold.it/250x180">
-    </li>
-    <li class="" data-slide-to="3" data-target="#article-photo-carousel">
-      <img alt="" src="http://placehold.it/250x180">
-    </li>
+    <?php endforeach; ?>
   </ol>
 </div>
-
-
 <script>
 // Stop carousel
 $('.carousel').carousel({

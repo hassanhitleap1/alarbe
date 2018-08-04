@@ -19,7 +19,7 @@ $this->title = 'alarbia';
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <?= Html::img('images\slider\1.jpg', ['alt' => 'sds']); ?>
+      <?= Html::img('@web/images\slider\1.jpg', ['alt' => 'sds']); ?>
        <div class="carousel-caption d-none d-md-block">
        <div class="panel panel-primary display-hiden-div">
         <div class="panel-heading"><?=Yii::t('app','Search_box')?></div>
@@ -95,14 +95,14 @@ $this->title = 'alarbia';
     </div>
 
     <div class="item">
-    <?= Html::img('images\slider\2.jpg', ['alt' => 'sds']); ?>
+    <?= Html::img('@web/images\slider\2.jpg', ['alt' => 'sds']); ?>
       <div class="carousel-caption d-none d-md-block">
         <h3><?= Yii::t('app', 'Slider_text_two') ?></h3>
       </div>  
     </div>
 
     <div class="item">
-    <?= Html::img('images\slider\3.jpg', ['alt' => 'sds']); ?>
+    <?= Html::img('@web/images\slider\3.jpg', ['alt' => 'sds']); ?>
       <div class="carousel-caption d-none d-md-block">
         <h3><?= Yii::t('app', 'Slider_text_three') ?></h3>
       </div>      
@@ -119,7 +119,7 @@ $this->title = 'alarbia';
     <span class="sr-only">Next</span>
   </a>
 </div>
-<?php// $this->render('/layouts/slider');?>
+
 <!-- end fiexd silder -->
 <div class="container">
     <div chdir
