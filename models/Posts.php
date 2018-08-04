@@ -61,6 +61,7 @@ class Posts extends \yii\db\ActiveRecord
             'for_what' => Yii::t('app', 'For_What'),
             'create_at' => Yii::t('app', 'Create_At'),
             'update_at' => Yii::t('app', 'Update_At'),
+            'files'=> Yii::t('app', 'Image'),
         ];
     }
 

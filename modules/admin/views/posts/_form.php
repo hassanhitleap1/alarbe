@@ -25,16 +25,16 @@ use app\models\Areas;
     ]) ?>
   
        <?= $form->field($model, 'sub_category_id')->dropDownList(
-            ArrayHelper::map(SubCategories::find()->all(), 'id', 'name_en'),
+            ArrayHelper::map(SubCategories::find()->all(), 'id', 'name_'.Yii::$app->language),
             ['prompt' => 'please select country ']
         ); ?>
     <?= $form->field($model, 'area_id')->dropDownList(
-        ArrayHelper::map(Areas::find()->all(), 'id', 'name_en'),
+        ArrayHelper::map(Areas::find()->all(), 'id', 'name_'.Yii::$app->language),
         ['prompt' => 'please select country ']
     ); ?>
 
     <?= $form->field($model, 'for_what')->dropDownList(
-        ['1'=>'rent','2'=>'sell'],
+        ['1'=>Yii::t('app', 'Rent'),'2'=> Yii::t('app', 'sell') ],
         ['prompt'=> 'please select for what']
     ) ?>
 

@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     /* Main carousel style */
 .carousel {
-    width: 600px;
+    width: 90%;
 }
 
 /* Indicators list style */

@@ -51,6 +51,7 @@ return [
     'Countries'=> 'Countries',
     'Pages'=> 'Pages',
     'Posts'=> 'Posts',
+    'Image'=> 'Image',
 
     
 ];
