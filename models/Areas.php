@@ -72,7 +72,13 @@ class Areas extends \yii\db\ActiveRecord
         return new AreasQuery(get_called_class());
     }
 
-    
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPosts()
+    {
+        return $this->hasMany(Posts::className(), ['area_id' => 'id']);
+    }
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {

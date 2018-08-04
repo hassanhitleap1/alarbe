@@ -50,6 +50,22 @@ class Countries extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSubCategories()
+    {
+        return $this->hasMany(SubCategories::className(), ['category_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAreas()
+    {
+        return $this->hasMany(Areas::className(), ['id_country' => 'id']);
+    }
+  
+    /**
      * @inheritdoc
      * @return CountriesQuery the active query used by this AR class.
      */

@@ -31,4 +31,11 @@ class PostsQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+    // public function whereCountery($idCounty,$db = null)
+    // {
+    //     $country= Countries::find($id);
+    //     return parent::all($db);
+    // }
+
 }

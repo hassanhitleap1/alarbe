@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="panel panel-primary ">
             <div class="panel-heading "><?= Yii::t('app', 'Searchbox') ?></div>
             <div class="panel-body">
-                <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter','method'=>'GET']) ?>
+                <?php $form = ActiveForm::begin(['action' => '/site/filter','method'=>'GET']) ?>
                     <div class="row">
 
                         <div class="container">
@@ -30,7 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <select id="myselect" class="form-control col-md-3 " name="country">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
-                                                <option value="<?= $country->id ?>"><?= $country['name_'.Yii::$app->language] ?></option>
+                                                <?php if(isset($_GET['country'])):?>
+                                                <?php if ($_GET['country']== $country->id):?>
+                                                    <option value="<?= $country->id ?>" selected><?= $country['name_' . Yii::$app->language] ?></option>
+                                                    <?php else : ?>
+                                                    <option value="<?= $country->id ?>"><?= $country['name_' . Yii::$app->language] ?></option>
+                                                    <?php endif; ?>
+                                                <?php else : ?>
+                                                    <option value="<?= $country->id ?>"><?= $country['name_' . Yii::$app->language] ?></option>
+                                                <?php endif; ?>
+                                                
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -41,7 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <select id="myselect" class="form-control col-md-3 " name="area">
                                                 <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
-                                                    <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
+                                                    <?php if (isset($_GET['area'])) : ?>
+                                                        <?php if ($_GET['area'] == $area->id) : ?>
+                                                            <option value="<?= $area->id ?>" selected><?= $area['name_' . Yii::$app->language] ?></option>
+                                                            <?php else : ?>
+                                                            <option value="<?= $area->id ?>"><?= $area['name_' . Yii::$app->language] ?></option>
+                                                            <?php endif; ?>
+                                                        <?php else : ?>
+                                                        <option value="<?= $area->id ?>"><?= $area['name_' . Yii::$app->language] ?></option>
+                                                        <?php endif; ?>
                                                 <?php endforeach; ?>
                                             </select>
                                     </div>
@@ -53,7 +70,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <select id="myselect" class="form-control col-md-3" name="subCategory">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?>  </option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
-                                                <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
+                                                    <?php if (isset($_GET['subCategory'])) : ?>
+                                                        <?php if ($_GET['subCategory'] == $subCategory->id) : ?>
+                                                             <option value="<?= $subCategory->id ?>" selected><?= $subCategory['name_' . Yii::$app->language] ?></option>
+                                                            <?php else : ?>
+                                                            <option value="<?= $subCategory->id ?>"><?= $subCategory['name_' . Yii::$app->language] ?></option>
+                                                            <?php endif; ?>
+                                                        <?php else : ?>
+                                                         <option value="<?= $subCategory->id ?>"><?= $subCategory['name_' . Yii::$app->language] ?></option>
+                                                        <?php endif; ?>                                            
+                                               
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -65,8 +91,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="container">
                         <div class="row clear">
                                 <div class="col-md-2 ">
-                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what"><?= Yii::t('app', 'Sale') ?></label>
-                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what"><?= Yii::t('app', 'Rent') ?></label>
+                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="sell"><?= Yii::t('app', 'Sale') ?></label>
+                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="1" name="rent"><?= Yii::t('app', 'Rent') ?></label>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">

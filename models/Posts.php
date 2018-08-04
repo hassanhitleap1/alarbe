@@ -19,6 +19,9 @@ use Yii;
  */
 class Posts extends \yii\db\ActiveRecord
 {
+    const RENT = 1;
+    const SELL= 2;
+    
     public $files;
     /**
      * @inheritdoc

@@ -186,20 +186,23 @@ class SiteController extends BaseController
         $query = Posts::find();
         $countQuery = clone $query;
         if(! empty( $request->get('area')) ){
-            
             $query->where(['area_id'=> $request->get('area')]);
         }
-        // if (!empty($request->get('category'))) {
-        //     $query->where(['category' => $request->get('category')]);
-        // }
         if (!empty($request->get('subCategory'))) {
             $query->where(['sub_category_id' => $request->get('subCategory')]);
         }
-        // if (!empty($request->get('country'))) {
-        //     $query->where(['country' => $request->get('country')]);
-        // }
-        if (!empty($request->get('for_what'))) {
-            $query->where(['for_what' => $request->get('for_what')]);
+        if (!empty($request->get('country'))) {
+            $request->get('country');
+            $country = Categories::findOne(1);
+            var_dump($country->areas);
+            $query->where(['country' => $ides]);
+            exit;
+        }
+        if (!empty($request->get('sell'))) {
+            $query->where(['for_what' => Posts::SELL]);
+        }
+        if (!empty($request->get('rent'))) {
+            $query->where(['for_what' => Posts::RENT]);
         }
         
         $pagination = new Pagination([
