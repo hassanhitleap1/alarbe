@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * AreasController implements the CRUD actions for Areas model.
  */
-class AreasController extends Controller
+class AreasController extends BaseController
 {
     /**
      * @inheritdoc

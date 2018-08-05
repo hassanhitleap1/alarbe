@@ -14,7 +14,7 @@ use app\models\ImagesPost;
 /**
  * PostsController implements the CRUD actions for Posts model.
  */
-class PostsController extends Controller
+class PostsController extends BaseController
 {
     /**
      * @inheritdoc
