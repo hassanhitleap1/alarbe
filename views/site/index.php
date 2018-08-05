@@ -31,7 +31,7 @@ $this->title = 'alarbia';
                             <div class="form-inline">
                                 <div class="form-group has-feedback col-md-3">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Country') ?></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span>  <?= Yii::t('app', 'Country') ?></div>
                                         <select id="myselect" class="form-control col-md-3 " name="country">
                                             <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
@@ -42,7 +42,7 @@ $this->title = 'alarbia';
                                 </div>                             
                                 <div class="form-group has-feedback col-md-3">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span><?= Yii::t('app', 'Area') ?></div>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Area') ?></div>
                                             <select id="myselect" class="form-control col-md-3 " name="area">
                                                 <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
@@ -70,8 +70,8 @@ $this->title = 'alarbia';
                     <div class="container">
                         <div class="row clear">
                                 <div class="col-md-3 ">
-                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what"><?= Yii::t('app', 'Sale') ?> </label>
-                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what"><?= Yii::t('app', 'Rent') ?> </label>
+                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="1" name="for_what" ><?= Yii::t('app', 'Sale') ?> </label>
+                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="2" name="for_what"  ><?= Yii::t('app', 'Rent') ?> </label>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
