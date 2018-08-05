@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Country') ?></div>
                                         <select id="myselect" class="form-control col-md-3 " name="country">
-                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
+                                            <option selected value="-1"><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
                                                 <?php if(isset($_GET['country'])):?>
                                                 <?php if ($_GET['country']== $country->id):?>
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Area') ?></div>
                                             <select id="myselect" class="form-control col-md-3 " name="area">
-                                                <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
+                                                <option selected value="-1"><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
                                                     <?php if (isset($_GET['area'])) : ?>
                                                         <?php if ($_GET['area'] == $area->id) : ?>
@@ -68,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="input-group ">
                                         <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Category') ?></div>
                                         <select id="myselect" class="form-control col-md-3" name="subCategory">
-                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?>  </option>
+                                            <option selected  value="-1"><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?>  </option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                     <?php if (isset($_GET['subCategory'])) : ?>
                                                         <?php if ($_GET['subCategory'] == $subCategory->id) : ?>
@@ -91,8 +91,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="container">
                         <div class="row clear">
                                 <div class="col-md-2 ">
-                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="sell"><?= Yii::t('app', 'Sale') ?></label>
-                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="1" name="rent"><?= Yii::t('app', 'Rent') ?></label>
+                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="sell" <?= isset($_GET['sell']) ? 'checked' : '' ?> ><?= Yii::t('app', 'Sale') ?></label>
+                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="1" name="rent" <?= isset($_GET['rent']) ? 'checked' : '' ?>><?= Yii::t('app', 'Rent') ?></label>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">

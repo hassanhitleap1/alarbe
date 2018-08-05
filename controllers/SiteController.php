@@ -192,11 +192,11 @@ class SiteController extends BaseController
             $query->where(['sub_category_id' => $request->get('subCategory')]);
         }
         if (!empty($request->get('country'))) {
-            $request->get('country');
-            $country = Categories::findOne(1);
-            var_dump($country->areas);
-            $query->where(['country' => $ides]);
-            exit;
+            // $request->get('country');
+            // $country = Categories::findOne(1);
+            // var_dump($country->areas);
+            // $query->where(['country' => $ides]);
+            // exit;
         }
         if (!empty($request->get('sell'))) {
             $query->where(['for_what' => Posts::SELL]);
@@ -205,11 +205,9 @@ class SiteController extends BaseController
             $query->where(['for_what' => Posts::RENT]);
         }
         if (!empty($request->get('search'))) {
-            // $search =$request->get('search');
-            // $query->where(function ($query) use ($search) {
-            //     $query->orwhere('title', 'like', '%' . trim($search) . '%')
-            //         ->orwhere('description', 'like', '%' . trim($search) . '%');
-            // });
+            $search =$request->get('search');
+            $query->orWhere(['like', 'title', $search]);
+            $query->orWhere(['description', 'title', $search]);
         }
         $pagination = new Pagination([
             'defaultPageSize'=>4,
