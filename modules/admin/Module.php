@@ -39,6 +39,7 @@ class Module extends \yii\base\Module
     public function init()
     {
         $this->layout=$this->layouts;
+        \Yii::$app->language = 'ar';
         parent::init();
 
         // custom initialization code goes here

@@ -6,6 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'name'=>'alarbia',
+   // 'language' => 'ar',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -19,6 +20,25 @@ $config = [
         ],
     ],
     'components' => [
+        'componentLang' => [
+            'class' => 'app\components\ComponentLang',
+        ],
+        'helperUrl'=>[
+            'class' => 'app\components\UrlHelper', 
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                            //'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'dfsdgdsag((#$@$#%%^f',
@@ -50,14 +70,17 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
+                'posts' => 'post/index',
+                'post/<id:\d+>' => 'post/view',
             ],
         ],
-        */
+    
     ],
     'params' => $params,
 ];

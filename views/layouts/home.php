@@ -13,6 +13,7 @@ use app\models\SubCategories;
 
 
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -32,40 +33,43 @@ AppAsset::register($this);
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::$app->name ,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
+        
     ]);
-    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+    $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
     $subCategories = SubCategories::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();
     if (!empty($subCategories)) {
         foreach ($subCategories as $subCategory) {
             $menuItems[] = ['label' => $subCategory->name_en, 'url' => ['/site/filter', 'subCategory' => $subCategory->id]];
         }
     }
-       
-        // ['label' => 'About', 'url' => ['/site/about']],
-        // ['label' => 'Contact', 'url' => ['/site/contact']],
-       // ['label' => 'Admin', 'url' => ['/admin']],
-    //];
-    // if (Yii::$app->user->isGuest) {
-    //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    // } else {
-    //     $menuItems[] = '<li>'
-    //         . Html::beginForm(['/site/logout'], 'post')
-    //         . Html::submitButton(
-    //             'Logout (' . Yii::$app->user->identity->username . ')',
-    //             ['class' => 'btn btn-link logout']
-    //         )
-    //         . Html::endForm()
-    //         . '</li>';
-    // }
+$menuItems[] = [
+    'label' => Yii::t('app', 'Language'),
+    'items' => [
+        [
+            'label' => Yii::t('app', 'Arabic') . Html::img(Yii::$app->request->BaseUrl . '\images\flag\if_Saudi-Arabia.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
+            'url' => ['/','lang'=>'ar']
+
+            ,
+        ],
+
+        [
+            'label' => Yii::t('app', 'English') . Html::img(Yii::$app->request->BaseUrl . '\images\flag\if_United-Kingdom.png', ['class' => 'pull-right', 'style' => 'width: 41px;']),
+            'url' => ['/','lang'=>'en']
+            ,
+
+        ],
+
+    ],
+];    
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
+        'encodeLabels' => false, 
     ]);
     NavBar::end();
     ?>
@@ -79,20 +83,20 @@ AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-            <h3> copyright </h3>
+            <h3> <?= Yii::t('app', 'Copyright') ?> </h3>
                 <hr>
                 <p class="">&copy; alrbia <?= date('Y') ?></p>
             </div>
             <div class="col-md-4">
-                <h3>connect us </h3>
+                <h3><?= Yii::t('app', 'Connect_us') ?> </h3>
                 <hr>
                 <ul>
-                    <li><?= Html::a('About', ['site/about']) ?></li>
-                     <li><?= Html::a('Contact', ['site/contact']) ?></li>
+                    <li><?= Html::a(Yii::t('app', 'About') , ['site/about']) ?></li>
+                     <li><?= Html::a(Yii::t('app', 'Contact') , ['site/contact']) ?></li>
                 </ul>
             </div>
             <div class="col-md-4">
-              <h3> campany name </h3>
+              <h3> <?= Yii::t('app', 'Campany_name') ?>  </h3>
                 <hr>
                 <p class="">alrbia</p>
             </div>

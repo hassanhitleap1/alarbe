@@ -72,8 +72,18 @@ class SiteController extends BaseController
     public function actionIndex()
     {
         $this->layout = '//home';
+        $areas = Areas::find()->all();
+        $countries = Countries::find()->all();
+        $categoris = Categories::find()->all();
+        $subCategories = SubCategories::find()->all();
         $posts=Posts::find()->limit(5)->orderBy(['create_at' => SORT_DESC])->all();;
-        return $this->render('index',['posts'=>$posts]);
+        return $this->render('index',[
+            'posts'=>$posts,
+            'areas' => $areas,
+            'countries' => $countries,
+            'categoris' => $categoris,
+            'subCategories' => $subCategories,
+            ]);
     }
 
     /**

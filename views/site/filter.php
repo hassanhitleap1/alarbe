@@ -17,29 +17,29 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-contact">
     <div class="row container">
         <div class="panel panel-primary ">
-            <div class="panel-heading ">search box</div>
+            <div class="panel-heading "><?= Yii::t('app', 'Searchbox') ?></div>
             <div class="panel-body">
                 <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter','method'=>'GET']) ?>
                     <div class="row">
 
                         <div class="container">
                             <div class="form-inline">
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Country</div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg" name="country">
-                                            <option selected disabled>Select Country</option>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Country') ?></div>
+                                        <select id="myselect" class="form-control col-md-3 " name="country">
+                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Country') ?></option>
                                             <?php foreach ($countries as $country) : ?>
-                                                <option value="<?= $country->id ?>"><?= $country->name_en ?></option>
+                                                <option value="<?= $country->id ?>"><?= $country['name_'.Yii::$app->language] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>                             
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Area</div>
-                                            <select id="myselect" class="form-control col-md-3 input-lg" name="area">
-                                                <option selected disabled>Select Area</option>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Area') ?></div>
+                                            <select id="myselect" class="form-control col-md-3 " name="area">
+                                                <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Area') ?></option>
                                                 <?php foreach ($areas as $area) : ?>
                                                     <option value="<?= $area->id ?>"><?= $area->name_en ?></option>
                                                 <?php endforeach; ?>
@@ -47,33 +47,40 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                 </div>
                     
-                                <div class="form-group has-feedback col-md-2">
+                                <div class="form-group has-feedback col-md-4">
                                     <div class="input-group ">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> Sub Category</div>
-                                        <select id="myselect" class="form-control col-md-3 input-lg " name="subCategory">
-                                            <option selected disabled>Select Sub Category</option>
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span> <?= Yii::t('app', 'Category') ?></div>
+                                        <select id="myselect" class="form-control col-md-3" name="subCategory">
+                                            <option selected disabled><?= Yii::t('app', 'Select') ?> <?= Yii::t('app', 'Category') ?>  </option>
                                             <?php foreach ($subCategories as $subCategory) : ?>
                                                 <option value="<?= $subCategory->id ?>"><?= $subCategory->name_en ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div> 
-                                                               
-                                <div class="form-group col-md-3">
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">find</button>
-                                </div> 
                             </div>
                         </div>
 
                     </div>
-                        <div class="container">
-                            <div class="row clear">
-                                <div class="col-md-12">
-                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what">Sale</label>
-                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what">rent</label>
+                    <div class="container">
+                        <div class="row clear">
+                                <div class="col-md-2 ">
+                                    <label class="checkbox-inline input-lg" ><input type="checkbox" value="1" name="for_what"><?= Yii::t('app', 'Sale') ?></label>
+                                    <label class="checkbox-inline input-lg"><input type="checkbox" value="2" name="for_what"><?= Yii::t('app', 'Rent') ?></label>
                                 </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                    <input type="text" class="form-control " id="search" placeholder="<?= Yii::t('app', 'Search') ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group ">
+                                            <button type="submit" class="btn btn-primary btn-block "><?= Yii::t('app', 'Find') ?></button>
+                                    </div>
+                                </div>      
                         </div>
                     </div>
+                    
                 <?php ActiveForm::end() ?>   
             </div>
         </div>
@@ -85,13 +92,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <?= Html::img($model->imagePosts['image_path'], [ 'class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']); ?>
+                    <?= Html::a(Html::img($model->imagePosts['image_path'], ['class' => 'card-img-top', 'style' => 'width: 100%;height: 332px;']), ['/site/show-post', 'id' => $model->id]) ?>
                     </div>
                     <div class="panel-body">
                         <?= Html::a('<h3>'.$model->title. '</h3>', ['/site/show-post', 'id' => $model->id]) ?>
-                        <h3><?= $model->title ?></h3>
-                        <?= $model->description ?>
-
+                        <?= substr($model->description,40 ); ?>
+                        <?= Html::a("read more", ['/site/show-post', 'id' => $model->id]) ?>
                     </div>
                 </div>
             </div>

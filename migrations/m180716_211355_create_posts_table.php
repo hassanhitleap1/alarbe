@@ -20,7 +20,7 @@ class m180716_211355_create_posts_table extends Migration
         $this->createTable('posts', [
             'id' => $this->primaryKey(),
             'title' => $this->string(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'sub_category_id'=>$this->integer(),
             'area_id' => $this->integer(),
             'for_what'=>$this->smallInteger(),

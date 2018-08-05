@@ -21,7 +21,7 @@ class m180716_061414_create_contact_table extends Migration
             'id' => $this->primaryKey(),
             'name'=>$this->string(),
             'email'=>$this->string(),
-            'subject'=>$this->string(),
+            'subject'=>$this->text(),
             'body'=>$this->text(),
         ],$tableOptions);
     }
