@@ -195,8 +195,8 @@ class SiteController extends BaseController
             
             $country = Countries::findOne($request->get('country'));
             $ids=[];
-            foreach ($country->areas as $areas) {
-                $ids[]= $areas->id;
+            foreach ($country->areas as $value) {
+                $ids[]= $value->id;
             }
             $query->where(['area_id' => $ids]);
         }
