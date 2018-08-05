@@ -185,18 +185,20 @@ class SiteController extends BaseController
         $request = Yii::$app->request;
         $query = Posts::find();
         $countQuery = clone $query;
-        if(! empty( $request->get('area')) ){
+        if(! empty( $request->get('area')) && $request->get('area') !=-1){
             $query->where(['area_id'=> $request->get('area')]);
         }
-        if (!empty($request->get('subCategory'))) {
+        if (!empty($request->get('subCategory')) && $request->get('subCategory') != -1) {
             $query->where(['sub_category_id' => $request->get('subCategory')]);
         }
-        if (!empty($request->get('country'))) {
-            // $request->get('country');
-            // $country = Categories::findOne(1);
-            // var_dump($country->areas);
-            // $query->where(['country' => $ides]);
-            // exit;
+        if (!empty($request->get('country')) && $request->get('country') != -1) {
+            
+            $country = Countries::findOne($request->get('country'));
+            $ids=[];
+            foreach ($country->areas as $areas) {
+                $ids[]= $areas->id;
+            }
+            $query->where(['area_id' => $ids]);
         }
         if (!empty($request->get('sell'))) {
             $query->where(['for_what' => Posts::SELL]);
@@ -207,7 +209,7 @@ class SiteController extends BaseController
         if (!empty($request->get('search'))) {
             $search =$request->get('search');
             $query->orWhere(['like', 'title', $search]);
-            $query->orWhere(['description', 'title', $search]);
+            $query->orWhere(['like', 'description', $search]);
         }
         $pagination = new Pagination([
             'defaultPageSize'=>4,
