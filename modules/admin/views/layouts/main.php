@@ -38,12 +38,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Countries', 'url' => ['countries/index']],
-            ['label' => 'Area', 'url' => ['areas/index']],
-            ['label' => 'Pages', 'url' => ['pages/index']],
-            ['label' => 'Categories', 'url' => ['categories/index']], 
-             ['label' => 'Sub Categories', 'url' => ['sub-categories/index']],
-            ['label' => 'Posts', 'url' => ['posts/index']],
+            ['label' => Yii::t('app','Countries'), 'url' => ['countries/index']],
+            ['label' => Yii::t('app', 'Area'), 'url' => ['areas/index']],
+            ['label' => Yii::t('app', 'Pages'), 'url' => ['pages/index']],
+            ['label' => Yii::t('app', 'Categories'), 'url' => ['categories/index']], 
+             ['label' => Yii::t('app', 'Sub_Category'), 'url' => ['sub-categories/index']],
+            ['label' => Yii::t('app', 'Posts'), 'url' => ['posts/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['main/login']]
             ) : (
