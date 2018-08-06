@@ -123,7 +123,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="panel-body">
                         <?= Html::a('<h3>'.$model->title. '</h3>', ['/site/show-post', 'id' => $model->id]) ?>
                         <?= substr($model->description,40 ); ?>
-                        <?= Html::a("read more", ['/site/show-post', 'id' => $model->id]) ?>
+                        <?= Html::a(Yii::t('app', 'Read_More'), ['/site/show-post', 'id' => $model->id]) ?>
                     </div>
                 </div>
             </div>
