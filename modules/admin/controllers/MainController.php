@@ -9,7 +9,7 @@ use app\models\LoginForm;
 /**
  * Default controller for the `admin` module
  */
-class MainController extends BaseController
+class MainController extends Controller
 {
     /**
      * Renders the index view for the module
