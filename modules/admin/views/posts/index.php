@@ -20,10 +20,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('app', 'Create_Posts'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+    <div class="table-responsive">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' => ['class' => 'table table-striped table-bordered table-responsive'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -33,15 +34,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => 'description',
                 'format' => 'raw',
             ],
-
-            'subCategory.name_ar',
+            [
+                'attribute' => 'sub_category_id',
+                'value' => 'subCategory.name_ar',
+            ],
             [
                 'attribute'=> 'for_what',
                 'value'=>function($dataProvider){
                     if($dataProvider->for_what == 1){
-                        return 'rent';
+                        return Yii::t('app','Rent');
                     }
-                    return 'sell';
+                    return Yii::t('app', 'Sell') ;
                 },
             ],
             //'create_at',
@@ -50,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+    </div>
     <?php Pjax::end(); ?>
   
 </div>

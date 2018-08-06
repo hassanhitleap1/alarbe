@@ -54,5 +54,5 @@ return [
     'Image'=> 'Image',
     'Find' => 'Find',
     'Read_More'=> 'Read More',
-    
+    'Email' => 'Email',
 ];

@@ -17,7 +17,7 @@ class BaseController extends Controller
     public function beforeAction($action)
     {
         if (Yii::$app->user->isGuest) {
-            return Yii::$app->response->redirect(Url::to(['/admin/main/login']));
+           // return Yii::$app->response->redirect(Url::to(['/admin/main/login']));
         } 
         return parent::beforeAction($action);
     }
