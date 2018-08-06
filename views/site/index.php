@@ -24,7 +24,7 @@ $this->title = 'alarbia';
        <div class="panel panel-primary display-hiden-div">
         <div class="panel-heading"><?=Yii::t('app','Search_box')?></div>
         <div class="panel-body">
-                        <?php $form = ActiveForm::begin(['action' => '?r=site%2Ffilter', 'method' => 'GET']) ?>
+                        <?php $form = ActiveForm::begin(['action' => '/site/filter', 'method' => 'GET']) ?>
                     <div class="row">
 
                         <div class="container">
@@ -70,8 +70,8 @@ $this->title = 'alarbia';
                     <div class="container">
                         <div class="row clear">
                                 <div class="col-md-3 ">
-                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="1" name="for_what" ><?= Yii::t('app', 'Sale') ?> </label>
-                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="2" name="for_what"  ><?= Yii::t('app', 'Rent') ?> </label>
+                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="1" name="sell" ><?= Yii::t('app', 'Sale') ?> </label>
+                                    <label class="checkbox-inline input-lg"  style="color: black;"><input type="checkbox" value="1"  name="rent"   ><?= Yii::t('app', 'Rent') ?> </label>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
