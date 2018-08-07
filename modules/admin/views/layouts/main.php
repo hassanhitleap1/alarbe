@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -45,12 +46,12 @@ AppAsset::register($this);
              ['label' => Yii::t('app', 'Sub_Category'), 'url' => ['sub-categories/index']],
             ['label' => Yii::t('app', 'Posts'), 'url' => ['posts/index']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['main/login']]
+                ['label' => Yii::t('app', 'Login'), 'url' => ['main/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['main/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()

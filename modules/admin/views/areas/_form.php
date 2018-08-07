@@ -18,8 +18,8 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'name_ar')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_country')->dropDownList(ArrayHelper::map(Countries::find()->all(), 'id', 'name_en'),
-    ['prompt'=>'please select country ']) ?>
+    <?= $form->field($model, 'id_country')->dropDownList(ArrayHelper::map(Countries::find()->all(), 'id', 'name_'. Yii::$app->language),
+    ['prompt'=> Yii::t('app', 'Select') .  Yii::t('app', 'Country') ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

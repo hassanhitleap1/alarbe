@@ -26,16 +26,16 @@ use app\models\Areas;
   
        <?= $form->field($model, 'sub_category_id')->dropDownList(
             ArrayHelper::map(SubCategories::find()->all(), 'id', 'name_'.Yii::$app->language),
-            ['prompt' => 'please select country ']
+            ['prompt' => Yii::t('app', 'Select') . Yii::t('app', 'Country') ]
         ); ?>
     <?= $form->field($model, 'area_id')->dropDownList(
         ArrayHelper::map(Areas::find()->all(), 'id', 'name_'.Yii::$app->language),
-        ['prompt' => 'please select country ']
+        ['prompt' => Yii::t('app', 'Select') . Yii::t('app', 'Area') ]
     ); ?>
 
     <?= $form->field($model, 'for_what')->dropDownList(
         ['1'=>Yii::t('app', 'Rent'),'2'=> Yii::t('app', 'sell') ],
-        ['prompt'=> 'please select for what']
+        ['prompt'=> Yii::t('app', 'Select') .  Yii::t('app', 'For_What') ]
     ) ?>
 
     <?= $form->field($model, 'files[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>

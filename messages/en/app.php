@@ -55,4 +55,11 @@ return [
     'Find' => 'Find',
     'Read_More'=> 'Read More',
     'Email' => 'Email',
+    'Login'=> 'Login',
+    'Logout'=> 'Logout',
+    'Save'=> 'Save',
+    'Username'=>'Username',
+    'Password'=>'Password',
+    'Update_Posts' => 'Update Posts',
+
 ];

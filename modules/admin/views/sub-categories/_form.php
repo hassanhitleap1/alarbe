@@ -20,8 +20,8 @@ use app\models\Categories;
 
 
     <?= $form->field($model, 'category_id')->dropDownList(
-        ArrayHelper::map(Categories::find()->all(), 'id', 'name_en'),
-        ['prompt' => 'please select country ']
+        ArrayHelper::map(Categories::find()->all(), 'id', 'name_'. Yii::$app->language),
+        ['prompt' => Yii::t('app', 'Select') .  Yii::t('app', 'Category') ]
      ) ;?>
 
     <div class="form-group">
