@@ -17,7 +17,7 @@ class MainController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->redirect(['posts/index']);
     }
 
     
@@ -34,7 +34,7 @@ class MainController extends Controller
         
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['index']);
         }
         
         $model->password = '';
@@ -53,6 +53,6 @@ class MainController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect(['login']);
     }
 }
