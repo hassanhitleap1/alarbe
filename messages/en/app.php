@@ -61,5 +61,6 @@ return [
     'Username'=>'Username',
     'Password'=>'Password',
     'Update_Posts' => 'Update Posts',
+    'Sub_Categories'=> 'Sub Categories',
 
 ];
