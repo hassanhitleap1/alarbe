@@ -62,4 +62,5 @@ return [
     'Password' => 'كلمة السر',
     'Update_Posts'=> 'تحديث المشور',
     'Sub_Categories' => 'التصنيف الفرعي',
+    'Contact'=>'اتصل بنا',
 ];

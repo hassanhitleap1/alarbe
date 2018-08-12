@@ -10,25 +10,8 @@ use yii\helpers\Html;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-12">
-        <h1><?= $model->title?> </h1>
-    </div>
-</div>
 
-
-<div class="row">
-    <div class="col-md-12">
-        <?= $model->description ?>
-    </div>
-</div>
 <style>
-
-    /* Main carousel style */
-.carousel {
-    width: 90%;
-}
-
 /* Indicators list style */
 .article-slide .carousel-indicators {
     bottom: 0;
@@ -55,52 +38,73 @@ $this->params['breadcrumbs'][] = $this->title;
     height: 54px;
     left: 0;
     width: 100px;
+    /* pading-top: 133px; */
 }
 /* Indicators active image style */
 .article-slide .carousel-indicators .active img {
     border: 2px solid #428BCA;
     opacity: 0.7;
 }
+@media (min-width: @screen-sm-min) { 
+    .article-slide .carousel-indicators img {
+        display: none;
+    }
+    .article-slide .carousel-indicators li {
+        display: none;
+    }
+}
+
 </style>
 
+<div class="row">
+    <div class="col-md-7">
+        <div class="carousel slide article-slide" id="article-photo-carousel">
 
-<div class="carousel slide article-slide" id="article-photo-carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner cont-slider">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner cont-slider">
-
-    <div class="item active">
-     <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '','title'=>'', 'style' => '']); ?>
+            <div class="item active">
+            <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '', 'title' => '', 'style' => '']); ?>
+            </div>
+            <?php foreach ($model->imagesPosts as $image) : ?>
+            <div class="item">
+                <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+            <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '', 'title' => '', 'style' => '']); ?>
+            </li>
+            <?php $i = 0; ?>
+            <?php foreach ($model->imagesPosts as $image) : ?>
+            <li class="" data-slide-to="<?= ++$i ?>" data-target="#article-photo-carousel">
+            <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
+            </li>
+            <?php endforeach; ?>
+        </ol>
+          <!-- Left and right controls -->
+        <a class="left carousel-control" href="#article-photo-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#article-photo-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
     </div>
-    <?php foreach ($model->imagesPosts as $image) : ?>
-    <div class="item">
-        <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
+    <div class="col-md-5 pull-right text-right">
+        <h1 class=""><?= $model->title ?> </h1>
+        <p class="" > <?= $model->description ?></p>
     </div>
-    <?php endforeach; ?>
-
-    <div class="item">
-      <img alt="" title="" src="http://placehold.it/600x400">
-    </div>
-    <div class="item">
-      <img alt="" title="" src="http://placehold.it/600x400">
-    </div>
-  </div>
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-      <?= Html::img('@web/' . $model->ImagePosts['image_path'], ['class' => '', 'title' => '', 'style' => '']); ?>
-    </li>
-    <?php $i=0;?>
-    <?php foreach ($model->imagesPosts as $image) : ?>
-    <li class="" data-slide-to="<?= ++$i?>" data-target="#article-photo-carousel">
-      <?= Html::img('@web/' . $image->image_path, ['class' => '', 'title' => '', 'style' => '']); ?>
-    </li>
-    <?php endforeach; ?>
-  </ol>
 </div>
+
 <script>
 // Stop carousel
 $('.carousel').carousel({
   interval: false
 });
+
 </script>
